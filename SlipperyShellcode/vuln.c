@@ -18,12 +18,15 @@ int main(int argc, char **argv){
   
   // Set the gid to the effective gid
   // this prevents /bin/sh from dropping the privileges
+  
   gid_t gid = getegid();
+  
   setresgid(gid, gid, gid);
 
   char buf[BUFSIZE];
 
   puts("Enter your shellcode:");
+  
   vuln(buf);
 
   puts("Thanks! Executing from a random location now...");
